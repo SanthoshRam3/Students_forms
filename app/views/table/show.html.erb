@@ -1,0 +1,17 @@
+<h1>Showing Student Details</h1>
+<p><strong> Name of the Student : </strong><%= @table.Name_of_the_Student%></p>
+<p><strong> Class : </strong><%= @table.Class%></p>
+<p><strong> Email Id : </strong><%= @table.Email_Id%></p>
+<p><strong> Date of birth : </strong><%= @table.Date_of_birth%></p>
+<p><strong> Residential Area : </strong><%= @table.Residential_Area%></p>
+<p><strong> Contact Number : </strong><%= @table.Contact_Number%></p>
+<p><strong> Fathers Name : </strong><%= @table.Fathers_Name%></p>
+<p><strong> Occupation of Father : </strong><%= @table.Occupation_of_Father%></p>
+<p><strong> Fathers Contact Number : </strong><%= @table.Fathers_Contact_Number%></p>
+<p><strong> Mothers Name : </strong><%= @table.Mothers_Name%></p>
+<p><strong> Occupation of Mother : </strong><%= @table.Occupation_of_Mother%></p>
+<p><strong> Mothers Contact Number : </strong><%= @table.Mothers_Contact_Number%></p> 
+<%= link_to 'Edit', edit_table_path %> |
+<%= link_to 'Delete', table_path ,method: :delete , data:{confirm: "Are you sure?"}%>|
+<%= link_to 'Back to students listing page' , table_index_path%></br>
+<%= link_to 'Create New Student Details Form', new_table_path%>

@@ -1,0 +1,63 @@
+<h1>Create a Student Details Form</h1>
+  <% if @table.errors.any? %>
+  <h2>The Following Errors Prevented the Tables</h2>
+  <ul>
+  <% @table.errors.full_messages.each do |msg|%>
+    <li><%= msg %> </li>
+    <% end %>
+  </ul>
+  <% end %>
+  <%= form_with scope: :table, url: table_index_path, local: true do |f| %>  
+  <p>
+  <%= f.label :Name_of_the_Student%></br>
+  <%= f.text_field :Name_of_the_Student%>
+  </p>
+  <p>
+  <%= f.label :Class%></br>
+  <%= f.text_field :Class%>
+  </p>  
+  <p>
+  <%= f.label :Email_Id%></br>
+  <%= f.text_field :Email_Id%>
+  </p>
+  <p>
+  <%= f.label :Date_of_birth%></br>
+  <%= f.text_field :Date_of_birth%>
+  </p>
+  <p>
+  <%= f.label :Residential_Area%></br>
+  <%= f.text_area :Residential_Area%>
+  </p>
+  <p>
+  <%= f.label :Contact_Number%></br>
+  <%= f.text_field :Contact_Number%>
+  </p>
+  <p>
+  <%= f.label :Fathers_Name%></br>
+  <%= f.text_field :Fathers_Name%>
+</p>
+<p>
+  <%= f.label :Occupation_of_Father%></br>
+  <%= f.text_field :Occupation_of_Father%>
+</p>
+<p>
+  <%= f.label :Fathers_Contact_Number%></br>
+  <%= f.text_field :Fathers_Contact_Number%>
+</p>
+<p>
+  <%= f.label :Mothers_Name%></br>
+  <%= f.text_field :Mothers_Name%>
+</p>
+<p>
+  <%= f.label :Occupation_of_Mother%></br>
+  <%= f.text_field :Occupation_of_Mother%>
+</p>
+<p>
+  <%= f.label :Mothers_Contact_Number%></br>
+  <%= f.text_field :Mothers_Contact_Number%>
+</p>
+<p>
+<%= f.submit %>
+</p>
+<% end %>
+<%= link_to 'Back To Home Page',root_path %>

@@ -1,0 +1,45 @@
+<h1 style="text-align:center;">Student Details List</h1>
+<table>
+<thead>
+<tr>
+<th>Name Of The Students</th>
+<th>List of Classes</th>
+<th>Email Id List</th>
+<th>Date of Birth List</th>
+<th>Residential Area List</th>
+<th>Contact Number List</th>
+<th>Father Name List</th>
+<th>Fathers Occupation List</th>
+<th>Fathers Contact Number List</th>
+<th>Mother Name List</th>
+<th>Mother Occupation List </th>
+<th>Mothers Contact Number</th>
+<th colspan=3>Actions</th>
+</tr>
+</thead>
+<tbody>
+<% @tables.each do |list| %>
+  <tr>
+  <td style="text-align:center;"><%= list.Name_of_the_Student  %></td>
+  <td style="text-align:center;"><%= list.Class  %></td>
+  <td style="text-align:center;"><%= list.Email_Id  %></td>
+  <td style="text-align:center;"><%= list.Date_of_birth  %></td>
+  <td style="text-align:center;"><%= list.Residential_Area  %></td>
+  <td style="text-align:center;"><%= list.Contact_Number  %></td>
+  <td style="text-align:center;"><%= list.Fathers_Name  %></td>
+  <td style="text-align:center;"><%= list.Occupation_of_Father  %></td>
+  <td style="text-align:center;"><%= list.Fathers_Contact_Number  %></td>
+  <td style="text-align:center;"><%= list.Mothers_Name  %></td>
+  <td style="text-align:center;"><%= list.Occupation_of_Mother  %></td>
+  <td style="text-align:center;"><%= list.Mothers_Contact_Number  %></td>
+  <td><%= link_to 'Show', table_path(list)%></td>
+  <td><%= link_to 'Edit', edit_table_path(list)%></td>
+  <td><%= link_to 'Delete', table_path(list),method: :delete,data: { confirm: "Are you sure?"}%></td>
+  </tr>
+  <% end %>
+</tbody>
+</table>
+<%= link_to 'Back To Home Page',root_path %></br>
+<%= link_to 'Go To About Page' , about_path%>
+
+
