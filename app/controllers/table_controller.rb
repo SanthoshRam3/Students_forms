@@ -1,6 +1,8 @@
 class TableController < ApplicationController
+  before_action :set_table, only: [:show, :edit, :update, :destroy]
+
   def show
-    @table = Table.find(params[:id])
+    
   end
   def index
     @tables = Table.all
@@ -10,21 +12,10 @@ class TableController < ApplicationController
     @table = Table.new
   end
   def edit
-    @table = Table.find(params[:id])
+    
   end
   def create
-    @table = Table.new(params.require(:table).permit(:Name_of_the_Student, 
-    :Class, 
-    :Email_Id, 
-    :Date_of_birth, 
-    :Residential_Area, 
-    :Contact_Number, 
-    :Fathers_Name, 
-    :Occupation_of_Father, 
-    :Fathers_Contact_Number, 
-    :Mothers_Name, 
-    :Occupation_of_Mother, 
-    :Mothers_Contact_Number))
+    @table = Table.new(table_params)
 
     if @table.save
       flash[:notice] = "Table Was Successfully Created"
@@ -34,8 +25,26 @@ class TableController < ApplicationController
     end
   end
   def update
-    @table = Table.find(params[:id])
-    if @table.update(params.require(:table).permit(:Name_of_the_Student, 
+    
+    if @table.update(table_params)
+      flash[:notice] = "Table Was Successfully Updated"
+      redirect_to @table
+    else
+      render 'edit'
+    end
+  end
+  def destroy
+   
+    @table.destroy
+    redirect_to table_index_path
+  end
+end
+private
+def set_table
+  @table = Table.find(params[:id])
+end
+def table_params
+  params.require(:table).permit(:Name_of_the_Student, 
     :Class, 
     :Email_Id, 
     :Date_of_birth, 
@@ -46,16 +55,5 @@ class TableController < ApplicationController
     :Fathers_Contact_Number, 
     :Mothers_Name, 
     :Occupation_of_Mother, 
-    :Mothers_Contact_Number))
-      flash[:notice] = "Table Was Successfully Updated"
-      redirect_to @table
-    else
-      render 'edit'
-    end
-  end
-  def destroy
-    @table = Table.find(params[:id])
-    @table.destroy
-    redirect_to table_index_path
-  end
+    :Mothers_Contact_Number)
 end
