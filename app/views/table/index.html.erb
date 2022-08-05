@@ -20,18 +20,18 @@
 <tbody>
 <% @tables.each do |list| %>
   <tr>
-  <td style="text-align:center;"><%= list.Name_of_the_Student  %></td>
-  <td style="text-align:center;"><%= list.Class  %></td>
-  <td style="text-align:center;"><%= list.Email_Id  %></td>
-  <td style="text-align:center;"><%= list.Date_of_birth  %></td>
-  <td style="text-align:center;"><%= list.Residential_Area  %></td>
-  <td style="text-align:center;"><%= list.Contact_Number  %></td>
-  <td style="text-align:center;"><%= list.Fathers_Name  %></td>
-  <td style="text-align:center;"><%= list.Occupation_of_Father  %></td>
-  <td style="text-align:center;"><%= list.Fathers_Contact_Number  %></td>
-  <td style="text-align:center;"><%= list.Mothers_Name  %></td>
-  <td style="text-align:center;"><%= list.Occupation_of_Mother  %></td>
-  <td style="text-align:center;"><%= list.Mothers_Contact_Number  %></td>
+  <td><%= list.Name_of_the_Student  %></td>
+  <td><%= list.Class  %></td>
+  <td><%= list.Email_Id  %></td>
+  <td><%= list.Date_of_birth  %></td>
+  <td><%= list.Residential_Area  %></td>
+  <td><%= list.Contact_Number  %></td>
+  <td><%= list.Fathers_Name  %></td>
+  <td><%= list.Occupation_of_Father  %></td>
+  <td><%= list.Fathers_Contact_Number  %></td>
+  <td><%= list.Mothers_Name  %></td>
+  <td><%= list.Occupation_of_Mother  %></td>
+  <td><%= list.Mothers_Contact_Number  %></td>
   <td><%= link_to 'Show', table_path(list)%></td>
   <td><%= link_to 'Edit', edit_table_path(list)%></td>
   <td><%= link_to 'Delete', table_path(list),method: :delete,data: { confirm: "Are you sure?"}%></td>
